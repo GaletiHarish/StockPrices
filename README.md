@@ -4,7 +4,7 @@ This web application retrieves stock data for selected companies using the Alpha
 These are the screenshots of web application
 ![Screenshot (97)](https://user-images.githubusercontent.com/123728670/235984561-12d6060a-c442-4e63-93e6-f93b1e1a1633.png)
 ![Screenshot (98)](https://user-images.githubusercontent.com/123728670/235984605-758c736a-7864-4476-b7b6-292288880f5b.png)
-
+![Screenshot (99)](https://user-images.githubusercontent.com/123728670/235984624-4989ef1c-9fcc-468b-bea7-c46b72c6d94f.png)
 ## Prerequisites
 
 - Python 3.6 or higher
