@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Prices</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Stock Prices</h1>
+    <button id="refreshButton">Refresh Data</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Price</th>
+                <th>Change Percent</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if stock_data %}
+                {% for stock in stock_data %}
+                    <tr>
+                        <td>{{ stock.symbol }}</td>
+                        <td>{{ stock.price }}</td>
+                        <td>{{ stock.change_percent }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="3">No stock data available.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+    <canvas id="stockChart"></canvas>
+    <script>
+       const stockData = JSON.parse('{{ stock_data | tojson }}');
+
+        const ctx = document.getElementById('stockChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: stockData.map(stock => stock.symbol),
+                datasets: [{
+                    label: 'Stock Price',
+                    data: stockData.map(stock => stock.price),
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        async function fetchStockDataAndUpdate() {
+            // Your code for fetching stock data and updating the chart
+        }
+    </script>
+</body>
+</html>
