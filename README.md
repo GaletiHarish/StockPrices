@@ -1,6 +1,6 @@
 # Stock Data Web Application
 
-This web application fetches stock data for selected companies using the Alpha Vantage API and displays the information in a user-friendly format.
+This web application retrieves stock data for selected companies using the Alpha Vantage API and displays the information in a user-friendly format. To set up and run the application, you need Python 3.6 or higher, Flask, and the Requests library. The README file provided contains step-by-step instructions for installing the required packages, setting environment variables, and running the Flask application. Once the application is running, you can access it at http://127.0.0.1:5000 in your web browser to view the stock data. The README also includes troubleshooting tips and license information.
 
 ## Prerequisites
 
